@@ -2,14 +2,22 @@ import settings
 import pygame
 import sys
 
-pygame.init() 
+def main():
+    pygame.init() 
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    pantalla = pygame.display.set_mode((settings.Ventana.ANCHO, settings.Ventana.ALTO))
+    pygame.display.set_caption(settings.Ventana.TITULO)
 
-pygame.quit()
-sys.exit()
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
+    pygame.quit()
+    sys.exit()
+
+if __name__ == '__main__':
+    main()
+
+    
